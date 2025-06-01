@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #about {
+      background: #ecf0f1;
+    }
+
+    #projects {
+      background: #fff;
+    }
+
+    #contact {
+      background: #ecf0f1;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    .project {
+      background: #fafafa;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-left: 5px solid #3498db;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .project {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ratna Sagar Patra</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Ratna Sagar Patra, a passionate and motivated B.Tech student currently in my second year at 
+        C.V.Raman Global University (CGU). I have a strong interest in technology and development, and I'm constantly exploring new tools and concepts to enhance my skills. I'm driven by curiosity and a desire to build innovative solutions that make a difference. As I continue my academic journey, I'm eager to learn, grow, and contribute to exciting projects that challenge and inspire me.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Stopwatch</h3>
+      <p>A Stopwatch website built using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project">
+      <h3>Tic Tac Toe</h3>
+      <p>A Tic Tac Toe website built using HTML, CSS, and JavaScript.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required style="width:100%; padding:10px; margin-bottom:10px;"><br>
+      <input type="email" id="email" placeholder="Your Email" required style="width:100%; padding:10px; margin-bottom:10px;"><br>
+      <textarea id="message" placeholder="Your Message" required style="width:100%; padding:10px; height:100px; margin-bottom:10px;"></textarea><br>
+      <button type="submit" style="padding:10px 20px; background:#3498db; color:white; border:none; cursor:pointer;">Send</button>
+    </form>
+    <p id="statusMessage" style="margin-top:10px;"></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Ratna Sagar Patra. All rights reserved.
+  </footer>
+
+  <script>
+    // Simple form handler
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const status = document.getElementById("statusMessage");
+
+      if (name && email && message) {
+        status.textContent = "Thanks for reaching out, " + name + "!";
+        status.style.color = "green";
+        this.reset();
+      } else {
+        status.textContent = "Please fill in all fields.";
+        status.style.color = "red";
+      }
+    });
+  </script>
+
+</body>
+</html>
